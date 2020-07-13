@@ -18,12 +18,14 @@ public class Conta {
 		this.saldo = saldo;
 	}
 
-	public void deposito(float valor) {
-		saldo = saldo + valor;
+	public float deposito(float valor) {
+		saldo += valor;
+		return saldo;
 	}
 	
-	public void saque(float valor) {
-		saldo = saldo - valor;
+	public float saque(float valor) {
+		saldo -= valor;
+		return saldo;
 	}
 	
 	public String exibirSaldo() {
@@ -39,7 +41,7 @@ public class Conta {
 	
 	public String getAll() {
 		return "Numero da agência: " + numero + "\n" +
-				"Nome da agência: " + agencia + "\n" +
+				"Nome da agência: " + agencia.getNome() + "\n" +
 				"Nome do cliente: " + cliente.getNome() + "\n" +
 				"Saldo da conta: " + saldo;
 	}
